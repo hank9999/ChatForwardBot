@@ -34,7 +34,12 @@ async def post_handler(request):
         name,
         text
     ))
-    await report_data(name, text)
+    textData = '[{}] {}: {}'.format(
+        server,
+        name,
+        text
+    )
+    await report_data(textData)
     return web.Response(text='OK')
         
 
